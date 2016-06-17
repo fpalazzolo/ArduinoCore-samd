@@ -174,7 +174,7 @@ static const uint8_t ATN = PIN_ATN;
 /*
  * SPI Interfaces
  */
-#define SPI_INTERFACES_COUNT 1
+#define SPI_INTERFACES_COUNT 0
 
 #define PIN_SPI_MISO         (22u)
 #define PIN_SPI_MOSI         (18u)
@@ -193,12 +193,17 @@ static const uint8_t SCK  = PIN_SPI_SCK ;
 /*
  * Wire Interfaces
  */
-#define WIRE_INTERFACES_COUNT 1
+#define WIRE_INTERFACES_COUNT 2
 
 #define PIN_WIRE_SDA         (16u)
 #define PIN_WIRE_SCL         (17u)
 #define PERIPH_WIRE          sercom1
 #define WIRE_IT_HANDLER      SERCOM1_Handler
+
+#define PIN_WIRE1_SDA        (22u)
+#define PIN_WIRE1_SCL        (23u)
+#define PERIPH_WIRE1         sercom3
+#define WIRE1_IT_HANDLER     SERCOM3_Handler
 
 static const uint8_t SDA = PIN_WIRE_SDA;
 static const uint8_t SCL = PIN_WIRE_SCL;

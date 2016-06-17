@@ -271,9 +271,15 @@ SERCOM sercom2( SERCOM2 ) ;
 
 #if defined(ARDUINO_UART_ONLY) || defined(ARDUINO_CDC_HID_UART) || defined(ARDUINO_CDC_UART) || defined(ARDUINO_HID_UART) || defined(ARDUINO_CDC_MIDI_HID_UART) || defined(ARDUINO_CDC_MSD_HID_UART) || defined(ARDUINO_CDC_MSD_MIDI_HID_UART)
 Uart Serial1( SERCOM_INSTANCE_SERIAL1, PIN_SERIAL1_RX, PIN_SERIAL1_TX, PAD_SERIAL1_RX, PAD_SERIAL1_TX ) ;
+Uart Serial2( SERCOM_INSTANCE_SERIAL2, PIN_SERIAL2_RX, PIN_SERIAL2_TX, PAD_SERIAL2_RX, PAD_SERIAL2_TX ) ;
+
+void SERCOM0_Handler()
+{
+  Serial1.IrqHandler();
+}
 
 void SERCOM1_Handler()
 {
-  Serial1.IrqHandler();
+  Serial2.IrqHandler();
 }
 #endif

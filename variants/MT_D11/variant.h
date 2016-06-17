@@ -163,18 +163,25 @@ static const uint8_t ATN = PIN_ATN;
  * Serial interfaces
  */
 // Serial1
-#define PIN_SERIAL1_RX       (31ul)
-#define PIN_SERIAL1_TX       (30ul)
+#define PIN_SERIAL1_RX       (5ul)
+#define PIN_SERIAL1_TX       (4ul)
 #define PAD_SERIAL1_TX       (UART_TX_PAD_2)
 #define PAD_SERIAL1_RX       (SERCOM_RX_PAD_3)
 
-#define SERCOM_INSTANCE_SERIAL1       &sercom1
+#define SERCOM_INSTANCE_SERIAL1       &sercom0
 
+// Serial2
+#define PIN_SERIAL2_RX       (25ul)
+#define PIN_SERIAL2_TX       (24ul)
+#define PAD_SERIAL2_TX       (UART_TX_PAD_2)
+#define PAD_SERIAL2_RX       (SERCOM_RX_PAD_3)
+
+#define SERCOM_INSTANCE_SERIAL2       &sercom1
 
 /*
  * SPI Interfaces
  */
-#define SPI_INTERFACES_COUNT 1
+#define SPI_INTERFACES_COUNT 0
 
 #define PIN_SPI_MISO         (14u)
 #define PIN_SPI_MOSI         (10u)
@@ -232,6 +239,7 @@ extern SERCOM sercom1;
 extern SERCOM sercom2;
 
 extern Uart Serial1;
+extern Uart Serial2;
 
 #endif
 
